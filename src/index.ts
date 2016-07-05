@@ -3,6 +3,10 @@ import * as tinycolor from "tinycolor2"
 
 const size = 512
 
+function rngRange(rng: () => number, min: number, max: number) {
+  return min + (max - min) * rng()
+}
+
 class IconGenerator {
   canvas: HTMLCanvasElement
   context: CanvasRenderingContext2D
@@ -18,9 +22,9 @@ class IconGenerator {
     const {context} = this
     const rng = seedrandom(seed)
     for (let i = 0; i < 5; ++i) {
-      const x = rng() * size
-      const y = rng() * size
-      const radius = size / 3 * (1 + rng())
+      const x = rngRange(rng, -0.25, 1.25) * size
+      const y = rngRange(rng, -0.25, 1.25) * size
+      const radius = size / 2 * (1 + rng())
       const color = tinycolor({h: rng() * 360, s: 1, v: 1, a: 0.5}).toRgbString()
       context.fillStyle = color
       context.beginPath()

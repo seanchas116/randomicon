@@ -5,16 +5,14 @@ function rngRange(rng: () => number, min: number, max: number) {
   return min + (max - min) * rng()
 }
 
-interface IconGeneratorOptions {
-  size?: number
-}
-
 class IconGenerator {
   canvas: HTMLCanvasElement
   context: CanvasRenderingContext2D
   size = this.opts.size || 512
 
-  constructor(protected opts: IconGeneratorOptions = {}) {
+  constructor(protected opts: {
+    size?: number
+  } = {}) {
     this.canvas = document.createElement("canvas")
     this.canvas.width = this.canvas.height = this.size
     this.context = this.canvas.getContext("2d")

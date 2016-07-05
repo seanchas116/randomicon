@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "simple icon generator with seeded random",
   "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server"

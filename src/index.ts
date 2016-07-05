@@ -1,25 +1,27 @@
-import * as seedrandom from "seedrandom"
-import * as tinycolor from "tinycolor2"
-
-const size = 512
+import seedrandom = require("seedrandom")
+import tinycolor = require("tinycolor2")
 
 function rngRange(rng: () => number, min: number, max: number) {
   return min + (max - min) * rng()
 }
 
+interface IconGeneratorOptions {
+  size?: number
+}
+
 class IconGenerator {
   canvas: HTMLCanvasElement
   context: CanvasRenderingContext2D
+  size = this.opts.size || 512
 
-  constructor() {
+  constructor(protected opts: IconGeneratorOptions = {}) {
     this.canvas = document.createElement("canvas")
-    this.canvas.width = this.canvas.height = size
+    this.canvas.width = this.canvas.height = this.size
     this.context = this.canvas.getContext("2d")
-    //this.context.globalCompositeOperation = "color"
   }
 
   generate(seed: string) {
-    const {context} = this
+    const {context, size} = this
     const rng = seedrandom(seed)
     for (let i = 0; i < 5; ++i) {
       const x = rngRange(rng, -0.25, 1.25) * size
@@ -34,8 +36,4 @@ class IconGenerator {
   }
 }
 
-for (const name of ["poe", "nyan", "hoge"]) {
-  const generator = new IconGenerator()
-  generator.generate(name)
-  document.body.appendChild(generator.canvas)
-}
+export = IconGenerator

@@ -25,7 +25,7 @@ class IconGenerator {
       const x = rngRange(rng, -0.25, 1.25) * size
       const y = rngRange(rng, -0.25, 1.25) * size
       const radius = size / 2 * (1 + rng())
-      const color = tinycolor({h: rng() * 360, s: 1, v: 1, a: 0.5}).toRgbString()
+      const color = tinycolor({h: rng() * 360, s: 1, v: 1, a: 0.75}).toRgbString()
       context.fillStyle = color
       context.beginPath()
       context.arc(x, y, radius, 0, 2 * Math.PI)

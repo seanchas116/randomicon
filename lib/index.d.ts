@@ -9,5 +9,6 @@ declare class IconGenerator {
         size?: number;
     });
     generate(seed: string): void;
+    toDataURL(): string;
 }
 export = IconGenerator;

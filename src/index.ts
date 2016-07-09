@@ -32,6 +32,10 @@ class IconGenerator {
       context.fill()
     }
   }
+
+  toDataURL() {
+    return this.canvas.toDataURL()
+  }
 }
 
 export = IconGenerator

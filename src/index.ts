@@ -11,7 +11,7 @@ class RandomIcon {
   size = this.opts.size || 512
   saturation = this.opts.saturation || 1
   alpha = this.opts.alpha || 0.75
-  repeat = this.opts.repeat || 50
+  repeat = this.opts.repeat || 20
 
   constructor(protected opts: {
     size?: number,

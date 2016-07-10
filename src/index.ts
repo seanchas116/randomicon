@@ -5,7 +5,7 @@ function rngRange(rng: () => number, min: number, max: number) {
   return min + (max - min) * rng()
 }
 
-class IconGenerator {
+class RandomIcon {
   canvas: HTMLCanvasElement
   context: CanvasRenderingContext2D
   size = this.opts.size || 512
@@ -43,4 +43,4 @@ class IconGenerator {
   }
 }
 
-export = IconGenerator
+export = RandomIcon

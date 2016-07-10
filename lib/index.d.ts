@@ -1,4 +1,4 @@
-declare class IconGenerator {
+declare class RandomIcon {
     protected opts: {
         size?: number;
         saturation?: number;
@@ -17,4 +17,4 @@ declare class IconGenerator {
     generate(seed: string): void;
     toDataURL(): string;
 }
-export = IconGenerator;
+export = RandomIcon;

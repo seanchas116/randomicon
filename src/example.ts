@@ -1,6 +1,6 @@
-import IconGenerator = require("./index")
+import RandomIcon = require("./index")
 
-const generator = new IconGenerator()
+const generator = new RandomIcon()
 
 for (const name of ["poe", "nyan", "hoge", "seanchas116"]) {
   generator.generate(name)

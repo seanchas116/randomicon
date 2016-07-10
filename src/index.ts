@@ -25,7 +25,8 @@ class IconGenerator {
   generate(seed: string) {
     const {context, size} = this
     const rng = seedrandom(seed)
-    for (let i = 0; i < 5; ++i) {
+    context.clearRect(0, 0, size, size)
+    for (let i = 0; i < 100; ++i) {
       const x = rngRange(rng, -0.25, 1.25) * size
       const y = rngRange(rng, -0.25, 1.25) * size
       const radius = size / 2 * (1 + rng())

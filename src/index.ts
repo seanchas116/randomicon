@@ -11,11 +11,13 @@ class RandomIcon {
   size = this.opts.size || 512
   saturation = this.opts.saturation || 1
   alpha = this.opts.alpha || 0.75
+  repeat = this.opts.repeat || 100
 
   constructor(protected opts: {
     size?: number,
     saturation?: number,
     alpha?: number,
+    repeat?: number
   } = {}) {
     this.canvas = document.createElement("canvas")
     this.canvas.width = this.canvas.height = this.size
@@ -26,7 +28,7 @@ class RandomIcon {
     const {context, size} = this
     const rng = seedrandom(seed)
     context.clearRect(0, 0, size, size)
-    for (let i = 0; i < 100; ++i) {
+    for (let i = 0; i < this.repeat; ++i) {
       const x = rngRange(rng, -0.25, 1.25) * size
       const y = rngRange(rng, -0.25, 1.25) * size
       const radius = size / 2 * (1 + rng())

@@ -1,7 +1,0 @@
-{
-  "globalDependencies": {
-    "node": "registry:dt/node#6.0.0+20160621231320",
-    "seedrandom": "registry:dt/seedrandom#2.4.2+20160316155526",
-    "tinycolor": "registry:dt/tinycolor#1.1.1+20160317120654"
-  }
-}

@@ -12,6 +12,9 @@
   "author": "seanchas116",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^7.0.5",
+    "@types/seedrandom": "^2.4.27",
+    "@types/tinycolor": "^1.1.27",
     "ts-loader": "^2.0.0",
     "typescript": "^2.1.6",
     "webpack": "^2.2.1",
